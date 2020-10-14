@@ -56,7 +56,10 @@ this.updatePurcahseState(updatedIngredients);
   purcahseCancleHandler=()=>{
     this.setState({purchasing:false});
   } 
+purchaseContinueHandler = ()=>{
+  alert("you continue");
 
+}
   removeIngredientHandler=(type)=>{
     
     const oldCount=this.state.ingredients[type];
@@ -90,7 +93,13 @@ this.updatePurcahseState(updatedIngredients);
         return (
             <Aux>
           <Modal show={this.state.purchasing} modalClosed={this.purcahseCancleHandler}>
-            <OrderSummary ingredients={this.state.ingredients }/></Modal>
+            <OrderSummary
+             ingredients={this.state.ingredients }
+            price={this.state.totalPrice}
+             purchaseCancled={this.purcahseCancleHandler}
+            purchaseContinued={this.purchaseContinueHandler}
+            
+            /></Modal>
             
             
           
