@@ -7,12 +7,12 @@ return(
     <div className={classes.CheckoutSummary}>
         <h1>we hope it tastes well</h1>
 <div style={{width:'100%' ,height:'300px',margin:'auto'}}>
-<Burger ingredient={props.ingredients}/>
+<Burger ingredients={props.ingredients}/>
 </div>
-<Button btnType="Danger" clicked >cancel</Button>
-<Button btnType ="Success" clicked>continue</Button>  
+<Button btnType="Danger" clicked={props.checkoutCancelled} >cancel</Button>
+<Button btnType ="Success" clicked={props.checkoutContinued}>continue</Button>  
     </div>
 
-)
+);
 }
 export default checkoutSummary;  
